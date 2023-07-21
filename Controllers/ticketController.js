@@ -124,3 +124,16 @@ exports.updateTicketById = async (req,res)=>{
     
     return res.status(403).send({message:"The user has insufiicient permissions to update this ticket"});
 }
+
+exports.deleteTicket=async (req,res)=>{
+
+    try{
+        const ticketId = req.params.id;
+
+        await Ticket.deleteOne({_id:ticketId})
+        res.status(200).send("Deleted Successfully")
+    } catch(error) {
+        console.log(error);
+        res.status(500).send({message : "Internal server error"})
+    }
+}

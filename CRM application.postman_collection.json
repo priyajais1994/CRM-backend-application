@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "5ec292b8-3b7e-4607-a5e9-96cea4fcc74f",
+		"name": "CRM application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27287174"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "sign up as customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"neha\",\r\n    \"email\" :\"neha@gmail.com\",\r\n    \"userId\" :\"neha123\",\r\n    \"password\" :\"12345\",\r\n    \"userType\" :\"CUSTOMER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/auth/signup",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign up as admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"priya\",\r\n    \"email\" :\"priya@gmail.com\",\r\n    \"userId\" :\"priya123\",\r\n    \"password\" :\"12345\",\r\n    \"userType\" :\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/auth/signup",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in as customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"userId\" :\"neha123\",\r\n    \"password\" :\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/auth/signin",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign up as engineer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"nishi\",\r\n    \"email\" :\"nishi@gmail.com\",\r\n    \"userId\" :\"nishi123\",\r\n    \"password\" :\"12345\",\r\n    \"userType\" :\"ENGINEER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/auth/signup",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in as admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"userId\": \"priya123\",\r\n    \"password\": \"12345\"\r\n    \r\n    \r\n\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/auth/signin",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in as engineer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"userId\": \"nishi123\",\r\n    \"password\": \"12345\"\r\n    \r\n    \r\n\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/auth/signin",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "create a new ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n       \"title\": \"tv not working \",\r\n        \"ticketPriority\": 5,\r\n        \"description\": \"plz check with priority \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/tickets",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a ticket by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"title\": \"iphone not working today\",\r\n    \"ticketPriority\": 6,\r\n    \"description\": \"plz check with high priority ok\",\r\n    \"status\": \"PROGRESS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/tickets/64bab588817d1112db991244",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"tickets",
+								"64bab588817d1112db991244"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a ticket by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/tickets/64bab588817d1112db991244",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"tickets",
+								"64bab588817d1112db991244"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all tickets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/tickets",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/users",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a new user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"arya\",\r\n    \"email\" :\"arya@gmail.com\",\r\n    \"userId\" :\"arya123\",\r\n    \"password\" :\"12345\",\r\n    \"userType\" :\"CUSTOMER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/users",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/users/649d5600c93fc6964bbd91fe",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"users",
+								"649d5600c93fc6964bbd91fe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InByaXlhMTIzIiwiaWF0IjoxNjkwMDExNjQ4LCJleHAiOjE2OTAwOTgwNDh9.aZ-M6YiCcgNPKy1GwhD6G3HV4UijsbGg0ll__I4ketY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"userStatus\" : \"APPROVED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{crmendpoint}}/crm/api/v1/users/649d5600c93fc6964bbd91fe",
+							"host": [
+								"{{crmendpoint}}"
+							],
+							"path": [
+								"crm",
+								"api",
+								"v1",
+								"users",
+								"649d5600c93fc6964bbd91fe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
